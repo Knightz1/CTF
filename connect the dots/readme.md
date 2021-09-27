@@ -36,7 +36,7 @@ Especially is case x:
 
 + The two last check are (v7==8) and (v5==255)  that mean we have to jump case 'x' 8 times 
 
-I wrote a script to find numbers and their index in dword_563EA2B73080 array that pass dword_563EA2B73080[v6] & 0x80 == 0
+I wrote a script to find numbers and their index in dword_563EA2B73080 array that pass dword_563EA2B73080[v6] & 0x80 != 0
 
 ![1](https://user-images.githubusercontent.com/91442807/134838025-67743495-f5b4-44c7-a631-e6248bdee221.png)
 
