@@ -51,7 +51,7 @@ I wrote a script to find numbers and their index in dword_563EA2B73080 array tha
     
 It has exact 8 numbers sastify
 
-The result of v8 accoring to those 8 numbers:
+The result of v8 according to those 8 numbers:
 
     140,index=675,  v8=0
     147,index=1235, v8=1
