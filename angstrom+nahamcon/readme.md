@@ -49,6 +49,64 @@ Lưu ý là chỉ so sánh 32 kí tự nên bỏ chữ P ở cuối ra
 -->Flag: actf{rusty_on_the_details_2fbdb7ac7de}
 
 
+2.BEAM: reverse Erlang file
+
+Cái bài này logic không khó nên mình chỉ để tool ở đây rồi các tự decompile ra để phân tích nhá:
+
+https://github.com/michalmuskala/decompile?fbclid=IwAR3uq_SR3MPlruZcxOlRPN4TmQZi7IrHtnMfE4Y8ETf-Q8T5H6DvGGCYOJE
+
+
+3.Flatland: reverse VM
+
+Chỉ cần debug để hiểu flow của chương trình:
+
+![1](https://user-images.githubusercontent.com/91442807/166939097-d09d19ed-b4dc-4705-beaa-133c1c1aad45.png)
+
++Đầu tiên chương trình sẽ lấy từng kí tự của input mình nhập vào ở case 13
+
++Sau đó thực hiện một vòng lặp 24 lần ở case 8 và case 10
+
++Trong vòng lặp đó thực hiện check kí tự mình nhập có nằm trong mảng byte_402150 không, nếu không có sẽ out chương trình 
+
++Sau đó sẽ lấy thứ tự của kí tự đó trong mảng byte_402150 để lưu vào một mảng.
+
++Thực hiện như vậy đối với kí tự kế tiếp
+
++Sau đó tới hàm check ở case 5:
+
+![1](https://user-images.githubusercontent.com/91442807/166940156-880492b5-b869-4366-9166-e975cf62cf06.png)
+
+-->Ở đây v3 là index của thứ tự kế tiếp và v11 là index của kí tự trước 
+
+-->Có 4 hàm check như thế, nếu 1 trong 4 cái check không có cái nào thỏa chương trìng sẽ out 
+
+-->Tóm lại, logic của chương trình sẽ như vầy:
+
+inp=['N','f', 'T', 'R', 'c', 'D', '1', 'o', 'n', 't', 'r', 'w', '}', '4', '{', 'm', 'F', 'l', '_', 'A', 'd', '0', 'u', 'a']
+a=[0x14,0xa,0x0,0x16,0xe,4,5,0x16,0xf,0xf,0x12,7,0xa,2,0x13,0x13,9,0xd,0x8,0x11,0xb,0xc,0,4]
+b=[0x11,0xe,0xf,6,9,0xc,5,0xa,0x12,1,7,0x15,0x10,0xe,0x10,2,0x11,0,0xa,8,0x16,3,2,0x13]
+
+xx=[0]*24
+#xx độ dài 24 kí tự
+#chỉ lấy các kí tự trong inp và các kí tự phải khác nhau
+#bắt đầu với actf{ và kết thúc }
+
+#sao cho:
+count=0
+for i in range(len(xx)):
+    x=inp.index(xx[i])
+    y=inp.index(xx[i+1])
+    if y==a[x] or x==a[y] or y==b[x] or x==b[y]:
+        count+=1
+    else:
+        print('Fail')
+        break
+
+if count==24:
+    print('Success')
+
+
+
 
 
 
