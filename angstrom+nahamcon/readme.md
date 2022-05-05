@@ -82,28 +82,52 @@ Chỉ cần debug để hiểu flow của chương trình:
 
 -->Tóm lại, logic của chương trình sẽ như vầy:
 
-inp=['N','f', 'T', 'R', 'c', 'D', '1', 'o', 'n', 't', 'r', 'w', '}', '4', '{', 'm', 'F', 'l', '_', 'A', 'd', '0', 'u', 'a']
-a=[0x14,0xa,0x0,0x16,0xe,4,5,0x16,0xf,0xf,0x12,7,0xa,2,0x13,0x13,9,0xd,0x8,0x11,0xb,0xc,0,4]
-b=[0x11,0xe,0xf,6,9,0xc,5,0xa,0x12,1,7,0x15,0x10,0xe,0x10,2,0x11,0,0xa,8,0x16,3,2,0x13]
+![1](https://user-images.githubusercontent.com/91442807/166942349-2ad7b65e-4ca1-4bd5-80bd-7d078886c7dd.png)
 
-xx=[0]*24
-#xx độ dài 24 kí tự
-#chỉ lấy các kí tự trong inp và các kí tự phải khác nhau
-#bắt đầu với actf{ và kết thúc }
+Trong giải thì mình dựa trên 1 số quy luật và bruteforce để tìm ra flag:
 
-#sao cho:
-count=0
-for i in range(len(xx)):
-    x=inp.index(xx[i])
-    y=inp.index(xx[i+1])
-    if y==a[x] or x==a[y] or y==b[x] or x==b[y]:
-        count+=1
-    else:
-        print('Fail')
-        break
++Trường hợp _ sẽ có 2 kí tự thỏa điều kiện là n và r nên sẽ có 2 trường hợp: actf{  n_r } và actf{ r_n }
 
-if count==24:
-    print('Success')
++Đối với trường hợp sau thì mình tìm tiếp là ko có từ nào có nghĩa nên quay lại cái đầu.
+
++Trong đó chắc chắn có từ flat nên có thể dựa trên đó để giới hạn số trường hợp lại.
+
++Trường hợp { và } đều có kí tự F thỏa mà F có thể trong từ Flat nên chắc chắn ở đầu từ đó } sẽ giới hạn lại còn 2 trường hợp.
+
++Tới đây thì các bạn có thể bruteforce các điều kiện và tìm flag
+
+Flag: actf{Fl4TmAn_rouNdw0R1D}
+
+
+
+4.Self
+
+Bài này mình ban đầu đặt bp tại hàm getc() để xem nó làm gì với input mà ko được nên cuối viết 1 cái disassembler để xem nó làm cái gì:
+
+Thông qua debug thì ta thấy được chương trình lấy 1 lần 4 bytes từ mảng dword_5632CB0A4038 và lấy byte đầu tiên làm điều kiện để switch-case:
+
+![1](https://user-images.githubusercontent.com/91442807/166946518-fcfdabd4-9d2a-4d0a-a57a-2b6340a57ca6.png)
+
+Disassembler:
+
+![1](https://user-images.githubusercontent.com/91442807/166978131-2264ccbd-b6d1-48e5-9004-ba45e26b3392.png)
+
+![2](https://user-images.githubusercontent.com/91442807/166978153-3af4d7e3-1110-4ac4-a0ad-c36c1986655d.png)
+
++Quan sát code được generate ra, hóa ra chương trình không bao giờ có opcode để đến được case lấy input(hèn chi mình đặt bp tại getc nó không bao giờ đến được :v)
+
++Quan sát thêm nữa thì thấy có quá nhiều vòng lặp và nó chỉ làm một công việc như nhau
+
++Và khi chương trình không lấy input thì nó chỉ có thể tạo flag trên memory
+
++Debug quan sát các opcode thực hiện lệnh add, sub và xor đồng thời patch các loop ko cần thiết lại.
+
+Flag: actf{the_flag_was_you_all_along}
+
+
+
+
+
 
 
 
