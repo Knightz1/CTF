@@ -104,9 +104,11 @@ Flag: actf{Fl4TmAn_rouNdw0R1D}
 
 Bài này mình ban đầu đặt bp tại hàm getc() để xem nó làm gì với input mà ko được nên cuối viết 1 cái disassembler để xem nó làm cái gì:
 
-Thông qua debug thì ta thấy được chương trình lấy 1 lần 4 bytes từ mảng dword_5632CB0A4038 và lấy byte đầu tiên làm điều kiện để switch-case:
+Thông qua debug thì ta thấy được chương trình lấy 1 lần 4 bytes từ mảng dword_5632CB0A4038 và lấy byte đầu tiên làm điều kiện để switch-case và các byte sau để tính toán.
 
 ![1](https://user-images.githubusercontent.com/91442807/166946518-fcfdabd4-9d2a-4d0a-a57a-2b6340a57ca6.png)
+
+Dump các bytes ra và phân tích các opcode(khá đơn giản vì code trong IDA rất đẹp rồi nên hầu như chỉ là copy-paste)
 
 Disassembler:
 
