@@ -46,7 +46,7 @@ Tuy nhiên lúc so sánh này là gần cuối chương trình này nhưng mình
 
 Lưu ý là chỉ so sánh 32 kí tự nên bỏ chữ P ở cuối ra
 
--->Flag: actf{rusty_on_the_details_2fbdb7ac7de}
+
 
 
 2.BEAM: reverse Erlang file
@@ -96,9 +96,6 @@ Trong giải thì mình dựa trên 1 số quy luật và bruteforce để tìm 
 
 +Tới đây thì các bạn có thể bruteforce các điều kiện và tìm flag
 
-Flag: actf{Fl4TmAn_rouNdw0R1D}
-
-
 
 4.Self
 
@@ -124,10 +121,42 @@ Disassembler:
 
 +Debug quan sát các opcode thực hiện lệnh add, sub và xor đồng thời patch các loop ko cần thiết lại.
 
-Flag: actf{the_flag_was_you_all_along}
+
+5. Baby3
+
++Chỉ là lấy cái mấy cái số hex rồi chuyển lại thành string rồi kết hợp lại là ra flag
+
+6. Super flag bros
+
++Cơ bản là ta sẽ reverse các máy trong game để tìm code thích hợp(khá đơn giản vì có thể debug được)
+
++Sau khi tìm được code và nhập vào ta sẽ thấy nó đi qua 1 hàm hash và sau đó xor với 1 mảng byte để in ra màn hình.
+
++Tuy nhiên sau khi in ra thì lại có một số kí tự null và space rất khó nhìn và nhưng vẫn có thể recover lại được bằng cách biết 1 số kí tự có trước và bruteforce. 
+
+7. Uninspired
+
++Logic nó như sau: độ dài input là 10 và chỉ lấy các giá trị từ 0 đến 9, sau đó có 1 mảng gồm 10 phần tử 0. Đối với mỗi số trong input thì thì số tại thứ tự đó trong mảng cộng thêm 1.
+
++Nhận ra có 1 logic là tổng các số trong input phải bằng 10.
+
++Biết được điều đó thì sau một hồi lấy giấy và thử ta suy ra được số 6210001000.
 
 
-5. 
+8. Imposter
+
++Chương trình không có chỗ để nhập input nên chắc có thể là nó tự print flag đúg như mô tả
+
++Vấn đề chương trình sử dụng các malloc() với size cực kì lớn để làm chậm chương trình và máy tính cần có ram cực kì lớn để có thể chạy xong.
+
+![1](https://user-images.githubusercontent.com/91442807/167192996-d24047e2-0412-4569-abdb-30dfdd681528.png)
+
+![2](https://user-images.githubusercontent.com/91442807/167193072-4d309e7f-78cf-42f1-b2a9-d2edc1f5d817.png)
+
++Ở trên là một instruction gọi malloc với sie lớn
+
++Đến đây t chỉ cần patch lại với 1 kích thước phù hợp để chương trình in ra flag.
+
 
 
 
