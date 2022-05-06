@@ -124,7 +124,8 @@ Disassembler:
 
 5. Baby3
 
-+Chỉ là lấy cái mấy cái số hex rồi chuyển lại thành string rồi kết hợp lại là ra flag
++Chỉ là lấy cái mấy cái số hex rồi chuyển lại thành string rồi kết hợp lại là ra flag.
+
 
 6. Super flag bros
 
@@ -133,6 +134,7 @@ Disassembler:
 +Sau khi tìm được code và nhập vào ta sẽ thấy nó đi qua 1 hàm hash và sau đó xor với 1 mảng byte để in ra màn hình.
 
 +Tuy nhiên sau khi in ra thì lại có một số kí tự null và space rất khó nhìn và nhưng vẫn có thể recover lại được bằng cách biết 1 số kí tự có trước và bruteforce. 
+
 
 7. Uninspired
 
