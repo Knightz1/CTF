@@ -38,11 +38,28 @@ Cái này mình debug rồi dùng z3 để giải thôi (cái script mình xóa 
 
 -Thấy được hai hàm timeGetTime() và ExitProcess() nên có vẻ là anti-debug
 
-->Nope nó lệnh call lại và đúng là F5 nó decompile được thêm một chút -> nope tiếp các lệnh call còn lại ta được main hoàn chỉnh:
+->Nope nó lệnh call lại và đúng là F5 nó decompile được thêm một chút -> nope tiếp các lệnh call còn lại ta được main hoàn chỉnh.
 
-![image](https://user-images.githubusercontent.com/91442807/173994412-b4aec8e3-80bb-4a1c-938a-8a3b117ef50b.png)
+-Phân tích hàm main và debug ta thấy được chương trình mở thanh ghi và check giá trị của một key:
 
-![image](https://user-images.githubusercontent.com/91442807/173994460-a78c1a76-8b8d-499a-a7bb-87d3f0a44d27.png)
+![image](https://user-images.githubusercontent.com/91442807/173995005-df66eb5b-045e-4edc-a88f-cda050336820.png)
+
+-Key ở đây là v13 sau khi encrpt bằng RC4(sub_401170) sẽ check vơi giá trị tại v24, decrypt RC4 ta thu được v13="hunter_123456_qwerty"
+
+-Pass được sẽ thấy chương trình lấy tiếp input khác nữa và yêu cầu tối đa số (vì có hàm atoi() nên input phải là số) và số sánh với 0xB0241528
+
+![image](https://user-images.githubusercontent.com/91442807/173995490-0aaf2eb5-9232-42e9-8fdb-0db8e2ea14cf.png)
+
+Hàm check khá đơn giản:
+
+![image](https://user-images.githubusercontent.com/91442807/173995728-fa8c22f9-c2cd-4047-96fd-01babea9d95d.png)
+
+Nên tới đây ta viết lại hàm check rồi bruteforce từ 0 đến 99999999 là ra.
+
+
+
+
+
 
 
 
