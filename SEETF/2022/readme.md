@@ -57,7 +57,11 @@ Hàm check khá đơn giản:
 Nên tới đây ta viết lại hàm check rồi bruteforce từ 0 đến 99999999 là ra.
 
 
+**************JustCTF*************************
 
+1. Bifurcation
+
+Bài này mình điều khiển dựa trên w,s,a,d để lấy các kí tự của flag, sau khi gom được justCTF{ và chương trình bắt đầu có các kí tự sai và mỗi lần chọn theo hướng khác nhau lại ra các kí tự khác nhau nhưng vì các kí tự của flag sau mỗi lần kết nối đều được giữ nguyên nên chỉ cần kiên nhẫn là lấy được hết kí tự của flag.
 
 
 
