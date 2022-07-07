@@ -16,7 +16,10 @@ Lúc đó ta chỉ cần lấy chuỗi (name + "1_l0v3_CSh4rp" + email) đem đi
 
 3. stomped 
 
-Cái này mình debug rồi dùng z3 để giải thôi (cái script mình xóa rồi lười viết lại quá :v)
+Cái này mình debug rồi dùng z3 để giải thôi hoặc nếu lười reverse thì dùng angr (angr cũng hoạt động tương tự z3 nhưng thay vì z3 mình tự tìm các điều kiện để thêm vào thì angr sẽ tìm các điều kiện đó cho mình)
+
+```python
+```
 
 4. magic
 
