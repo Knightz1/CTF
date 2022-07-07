@@ -34,6 +34,23 @@
 
 -Xóa dòng đó thì debug được :))
 
+![image](https://user-images.githubusercontent.com/91442807/177757551-c41f4cf3-2b7b-4c06-b278-66eb9805fcfe.png)
+
+-Ta thấy được kí tự đầu là 'W' và không cần step gì cả chỉ cần đặt tiếp con trỏ chuột ngay dòng đó là nó tự hiện kí tự tiếp theo, cứ thế ta lấy được: ```W0w_5ucH_N1c3_d3bU9_sK1lLz_```
+
+-Có vẻ nó chưa đủ lắm thì phải, tới đây mình bị kẹt hết một hồi vì những hàm khác như save() không có liên quan.
+
+-Lướt xuống todo xem tiếp:
+
+![image](https://user-images.githubusercontent.com/91442807/177758790-04377ff7-251f-477c-884f-a43378eb017d.png)
+
+-Thấy được thứ tự có vẻ bị ngược, chuyển lại đúng với comment xem thử:
+
+![image](https://user-images.githubusercontent.com/91442807/177759058-482b51a9-f740-49df-b209-9cb6906e608d.png)
+
+-Thế là có phần còn lại :))  ```Br0w53R_Bu9s_C4Nt_s70p_Y0u```
+
+
 
 
 
