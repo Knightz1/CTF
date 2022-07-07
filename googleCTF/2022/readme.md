@@ -55,6 +55,9 @@
 
 Bài này mình tìm hiểu sau giải, thấy hay nên note lại.
 
+-Đề cho một file pyc, dựa trên số commit của đề cho tìm được repo ```https://github.com/python/cpython/tree/64113a4ba801126028505c50a7383f3e9df29573```
+
+
 
 
 
