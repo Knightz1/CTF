@@ -51,6 +51,11 @@
 -Thế là có phần còn lại :))  ```Br0w53R_Bu9s_C4Nt_s70p_Y0u```
 
 
+2. MIXED
+
+Bài này mình tìm hiểu sau giải, thấy hay nên note lại.
+
+
 
 
 
