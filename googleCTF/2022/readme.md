@@ -55,7 +55,15 @@
 
 Bài này mình tìm hiểu sau giải, thấy hay nên note lại.
 
--Đề cho một file pyc, dựa trên số commit của đề cho tìm được repo ```https://github.com/python/cpython/tree/64113a4ba801126028505c50a7383f3e9df29573```
+-Đề cho một file pyc, dựa trên số commit của đề cho tìm được repo: ```https://github.com/python/cpython/tree/64113a4ba801126028505c50a7383f3e9df29573```
+
+-Đây là python phiên bản 3.11, tuy nhiên hãy download file zip về để build vì nếu dùng git clone khi build sẽ up lên phiên bản 3.12
+
+-Đối với phiên bản 3.11 thì mình tìm thấy tool nào hỗ trợ để decompile file pyc cả nên mình sẽ dùng dis module để decompile nó:
+
+```python
+
+
 
 
 
