@@ -62,6 +62,51 @@ Bài này mình tìm hiểu sau giải, thấy hay nên note lại.
 -Đối với phiên bản 3.11 thì mình tìm thấy tool nào hỗ trợ để decompile file pyc cả nên mình sẽ dùng dis module để decompile nó:
 
 ```python
+import marshal
+import dis
+with open("x.pyc", "rb") as f1:
+   d1=f1.read()
+d1=d1[16:]        #bỏ 16 bytes header đầu
+y=marshal.loads(d1)
+dis.dis(x)
+```
+
+![image](https://user-images.githubusercontent.com/91442807/177802626-b8fa4056-0cd4-4f52-9ce3-5f9bd924caee.png)
+
+-Nó in được một chút thì bị lỗi, xem file patch đề cho thì thấy mấy cái opcode trong file opcode.py đã bị đổi chỉ số theo random và cái file x.pyc sử dụng các opcode custom đó chứ không theo số tiêu chuẩn của python 3.11 nữa.
+
+->Vậy bây giờ cần tìm các số random đó để sửa lại trong file opcode.py để in ra cho đúng
+
+-Chỉ còn cách tạo file pyc để xem cấu trúc của nó rồi so sánh với x.pyc để map lại cho đúng
+
+-Tới đây thì xem thử co_names của chương trình lúc mới chạy (python bytecode tiêu biểu có 3 loại là ```co_names``` dùng để lưu các tên biến mà nó sẽ dùng trong code, ```co_consts``` dùng để lưu các số để tính toán và ```co_code``` lưu đoạn code hiển thi dưới định dạng là các bytes.
+
+-Xem co_names:
+
+```python
+print(y.co_names)
+```
+
+![image](https://user-images.githubusercontent.com/91442807/177806318-8aeaae58-7b83-474f-ab58-67b879a9258d.png)
+
+-Ta thấy có hàm main nhưng trong khi code ở dưới lại không có khởi tạo hàm main:
+
+![image](https://user-images.githubusercontent.com/91442807/177806505-32f73a0a-f1bd-4497-9bca-079b83afc03c.png)
+
+-Tạo file pyc:
+
+```python
+import py_compile
+py_compile.compile('sample.py')
+```
+-Custom lại file dis.py của python để in các chỉ số của opcode (dis.py)
+
+-Sau khi viết vài cái đơn giản để tạo ra thử có thể rút ra một số ý:
+  +opcode đầu là resume (trong khi opcode đầu của x.pyc là store_global với chỉ số 97) 
+
+
+
+
 
 
 
