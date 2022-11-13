@@ -1,11 +1,11 @@
-1. babyreeee
+## 1. babyreeee
 
 Chương trình lấy chuỗi mình nhập, sau đó lấy từng kí tự trong chuỗi +69 xor với thứ tự của kí tự trong chuỗi rồi so sánh với chuỗi cố định
 
 ->Làm ngược lại là ra flag
 
 
-2. bestsoftware
+## 2. bestsoftware
 
 Reverse file .NET: chương trình lấy name, email và licensekey trong đó name và email được cho trước.
 
@@ -14,7 +14,7 @@ Reverse file .NET: chương trình lấy name, email và licensekey trong đó n
 Lúc đó ta chỉ cần lấy chuỗi (name + "1_l0v3_CSh4rp" + email) đem đi SHA256 là ra flag
 
 
-3. stomped 
+## 3. stomped 
 
 Cái này mình debug rồi dùng z3 để giải thôi hoặc nếu lười reverse thì dùng angr (angr cũng hoạt động tương tự z3 nhưng thay vì z3 mình tự tìm các điều kiện để thêm vào thì angr sẽ tìm các điều kiện đó cho mình)
 
@@ -45,7 +45,7 @@ if (len(simgr.found) > 0):
 ```
 ![1](https://user-images.githubusercontent.com/91442807/177960662-e11fbe03-62f7-4b86-b183-fc2a521c12a9.png)
 
-4. magic
+## 4. magic
 
 -Quan sát pseudo-code của main không thấy chương trình không lấy input hay in ra cái gì đặc biệt
 
@@ -84,11 +84,6 @@ Hàm check khá đơn giản:
 Nên tới đây ta viết lại hàm check rồi bruteforce từ 0 đến 99999999 là ra.
 
 
-**************JustCTF*************************
-
-1. Bifurcation
-
-Bài này mình điều khiển dựa trên w,s,a,d để lấy các kí tự của flag, sau khi gom được justCTF{ và chương trình bắt đầu có các kí tự sai và mỗi lần chọn theo hướng khác nhau lại ra các kí tự khác nhau nhưng vì các kí tự của flag sau mỗi lần kết nối đều được giữ nguyên nên chỉ cần kiên nhẫn là lấy được hết kí tự của flag.
 
 
 
