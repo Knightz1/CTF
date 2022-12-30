@@ -20,4 +20,12 @@
 
 ## Dump file with that offset
 
-`./volatility_2.6_lin64_standalone -f ../Evidence.vmem --profile=profile_nào_đó dumpfiles -Q offset --dump-dir=đường_dẫn`
+`./volatility_2.6_lin64_standalone -f ../Evidence.vmem --profile=profile_nào_đó dumpfiles -o offset -D .`
+
+## List hive list
+
+`./volatility_2.6_lin64_standalone -f windows.vmem --profile=Win7SP1x64 hivelist`
+
+## Dump registry file dựa trên offset
+
+`./volatility_2.6_lin64_standalone -f windows.vmem --profile=Win7SP1x64 dumpregistry -o 0xfffff8a0018f0410 -D . `
