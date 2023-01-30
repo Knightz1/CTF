@@ -1,3 +1,5 @@
+http://ctfhacker.com/reverse/2018/09/16/flareon-2018-wasabi.html
+
 ## Hook lệnh i32.eq và xem các tham số của nó
 
 ```js
