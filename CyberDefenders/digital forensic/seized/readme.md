@@ -26,6 +26,12 @@ Dùng lệnh `psaux`:
 
 ## 5. What are the attacker's IP address and the local port on the targeted machine?
 
+Ở phần trên ta thấy attacker thực hiện `reverse shell` đến port `12345`, nên ta sử dụng `linux_netstat` để xem các kết nối đến port đó:
+
+![1](https://user-images.githubusercontent.com/91442807/215726225-517b1a77-5ba0-4357-8ed0-884e02e83721.png)
+
+- Kết quả: `192.168.49.1:12345`
+
 
 
 
