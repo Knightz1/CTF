@@ -14,7 +14,18 @@ Dùng lệnh `psaux`:
 
 - Ta thấy có chạy file `PythonBackup.py` nên vô link source của nó thử và thấy tại file `app/snapshot.py`:
 
-![1](https://user-images.githubusercontent.com/91442807/215723898-a7b0f042-a0f2-47b1-9601-4a4ace11f03d.png)
+![image](https://user-images.githubusercontent.com/91442807/215724200-22f8c3db-b320-4200-a7e9-e2552e6fa6a6.png)
+
+- Thấy chương trình có tải file nào đó về:
+
+- Tải về xem thử:
+
+![1](https://user-images.githubusercontent.com/91442807/215724508-6cfadf0b-b5e8-410e-9f2e-aced2763cafd.png)
+
+- Decode base64 ra: `shkCTF{th4t_w4s_4_dumb_b4ckd00r_86033c19e3f39315c00dca}`
+
+## 5. What are the attacker's IP address and the local port on the targeted machine?
+
 
 
 
