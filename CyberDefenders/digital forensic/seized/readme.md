@@ -32,6 +32,25 @@ Dùng lệnh `psaux`:
 
 - Kết quả: `192.168.49.1:12345`
 
+## 6. What is the first command that the attacker executed?
+
+Xem lại ở trên thì lệnh đầu tiên của attacker là gọi bash shell: `python -c import pty; pty.spawn("/bin/bash")`
+
+## 7. After changing the user password, we found that the attacker still has access. Can you find out how?
+
+![1](https://user-images.githubusercontent.com/91442807/215728037-31973153-ac11-4c82-849d-61270f59451a.png)
+
+ta có thấy attacker có mở file `rc.local` rồi ghi cái gì đó nhưng ta không thể dump file đó ra được, nhưng ta có thể `dump memory` tại PID `2887` để xem cách nó edit file:
+
+![1](https://user-images.githubusercontent.com/91442807/215728417-beb880cd-7bec-468e-a93b-1552bf02a14f.png)
+
+Ta lưu hết mấy cái string của mấy file dump được vào 1 file rồi `cat` nó rồi lọc từ `echo` ra: `cat str.txt | grep echo -A 5 -B 5`
+
+![1](https://user-images.githubusercontent.com/91442807/215731047-0b09c4b1-85c8-4ba6-a49f-d87ae255e299.png)
+
+- Quan sát thấy attacker lưu `ssh key` của máy nạn nhân để có thể dễ dàng truy cập.
+
+
 
 
 
