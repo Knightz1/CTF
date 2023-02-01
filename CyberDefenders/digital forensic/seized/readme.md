@@ -50,6 +50,32 @@ Ta lưu hết mấy cái string của mấy file dump được vào 1 file rồi
 
 - Quan sát thấy attacker lưu `ssh key` của máy nạn nhân để có thể dễ dàng truy cập.
 
+## 8. What is the name of the rootkit that the attacker used?
+
+Qua câu hỏi ở trên ta biết được attacker có thể truy cập máy tính dù cho có thay đổi mật khẩu -> `persistent access`
+
+- Có thể dùng `bootloader` hoặc `kernel-level` rootkit
+
+![image](https://user-images.githubusercontent.com/91442807/215937393-2b943a59-ac36-4198-8a27-c9e6728b7cf5.png)
+
+Dùng plugin `dmesg`:
+
+![image](https://user-images.githubusercontent.com/91442807/215937705-633720e1-0f14-40dc-ae2b-d7d054ba22c5.png)
+
+![1](https://user-images.githubusercontent.com/91442807/215938464-128740c2-854b-4d0a-b81d-2a614a4a91ea.png)
+
+- Rootkit là `sysemptyrect`
+
+## 9. The rootkit uses crc65 encryption. What is the key?
+
+crc65 có trong hình ở trên
+
+![1](https://user-images.githubusercontent.com/91442807/215938748-a81f9257-3c1d-40b9-97bd-a326540f88cc.png)
+
+- Dùng string ta lấy được key như trong hình.
+
+
+
 
 
 
