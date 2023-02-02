@@ -1,6 +1,20 @@
+## 1. What email address tricked the front desk employee into installing a security update?
+
+Xem thử proccess với `pstree`:
+
+![1](https://user-images.githubusercontent.com/91442807/216277876-58d5514e-48aa-40f4-a521-afdf77ebc131.png)
+
+- Thấy được một ứng dụng thư của microsoft là `outlook.exe` 
+
 ![1](https://user-images.githubusercontent.com/91442807/216226363-fde4c992-7e4a-4678-9d6d-6120c002a7f5.png)
 
+## 2. What is the filename that was delivered in the email?
+
+Tiến hành dump memory tại pid `3196` 
+
 `vol.py -f Target1-1dd8701f.vmss --profile=Win7SP1x86_23418 memdump -D . -p 3196`
+
+Rồi search string: 
 
 ![1](https://user-images.githubusercontent.com/91442807/216229197-2f492adc-e62b-4000-806e-1ba3232b391f.png)
 
