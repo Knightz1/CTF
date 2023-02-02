@@ -69,6 +69,8 @@ Phân tích `iexplorer.exe` và liệt kê các `mutant process` với `mutantsc
 
 ## 7. It appears that a notorious hacker compromised this box before our current attackers. Name the movie he or she is from.
 
+## 8. What is the NTLM password hash for the administrator account?
+
 Cái này tình cờ tìm ra thôi.
 
 Dùng `cmdscan` để tìm các lệnh termianl được nhập trong các proccess:
@@ -89,7 +91,21 @@ Tới đây mình quyết định lấy offset rồi dump file `w.tmp` ra tươn
 
 Lấy kết quả rồi đem vào `NTLM Hash Generator` thu được: `79402B7671C317877B8B954B3311FA82`
 
+## 9. The attackers appear to have moved over some tools to the compromised front desk host. How many tools did the attacker move?
 
+Dùng lệnh `consoles` ta có thể liệt kê được mấy cái lệnh được thực hiện và kết quả sau lệnh, xem các file `.exe` ở thư mục `Temp`
+
+![1](https://user-images.githubusercontent.com/91442807/216303435-b853b8a2-697b-4077-857a-cc2e9c2a45c6.png)
+
+## 10. What is the password for the front desk local administrator account?
+
+Lấy của ở trên luôn
+
+## 11. What is the std create data timestamp for the nbtscan.exe tool?
+
+Dùng `timeliner`: 
+
+![1](https://user-images.githubusercontent.com/91442807/216308214-61a853a4-d2aa-4f56-8b18-b5535e9d98d9.png)
 
 
 
