@@ -56,11 +56,42 @@ Một trong những nơi để setup `persistence access` là ở `registry key`
 
 Dùng `mutex` để tránh tình trạng có 2 tiến trình giống nhau cùng chạy trên máy [tham khảo](https://www.sans.org/blog/looking-at-mutex-objects-for-malware-discovery-indicators-of-compromise/)
 
-Phân tích `iexplorer.exe` và liệt kê các `mutant process` trong đó:
+![1](https://user-images.githubusercontent.com/91442807/216290990-5c60d4a1-34f8-4c19-80ee-5fdf30af34dd.png)
 
-![1](https://user-images.githubusercontent.com/91442807/216287251-9e279574-75ec-4529-bfed-410fb93cb97d.png)
+![1](https://user-images.githubusercontent.com/91442807/216290586-4673609e-3e4f-41bd-ae86-0b05fdcddbfc.png)
+
+Phân tích `iexplorer.exe` và liệt kê các `mutant process` với `mutantscan`:
+
+`vol.py -f Target1-1dd8701f.vmss --profile=Win7SP1x86_23418 mutantscan | grep -i ".dat"`
+
+![1](https://user-images.githubusercontent.com/91442807/216293149-3be55eaa-f72c-41d9-9e86-442b8db7d431.png)
+
 
 ## 7. It appears that a notorious hacker compromised this box before our current attackers. Name the movie he or she is from.
+
+Cái này tình cờ tìm ra thôi.
+
+Dùng `cmdscan` để tìm các lệnh termianl được nhập trong các proccess:
+
+![1](https://user-images.githubusercontent.com/91442807/216297142-6cad779b-62f7-4e1c-92f7-11a93e8472f3.png)
+
+- Thấy được kết quả của `wce.exe` được lưu vào `w.tmp` 
+
+![1](https://user-images.githubusercontent.com/91442807/216297566-ce92d75f-07c4-452f-ae4e-701742bdb152.png)
+
+![1](https://user-images.githubusercontent.com/91442807/216297699-9560b8a1-72e5-4a44-8519-43072425c96f.png)
+
+- Khá là đáng lưu tâm :))
+
+Tới đây mình quyết định lấy offset rồi dump file `w.tmp` ra tương tự như ở trên thôi
+
+![1](https://user-images.githubusercontent.com/91442807/216298006-e8be221e-dc20-4705-8a42-9db2710ded8e.png)
+
+Lấy kết quả rồi đem vào `NTLM Hash Generator` thu được: `79402B7671C317877B8B954B3311FA82`
+
+
+
+
 
 
 
