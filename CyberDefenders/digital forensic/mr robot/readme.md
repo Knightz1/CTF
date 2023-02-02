@@ -44,5 +44,24 @@ Xem lại mục procees với `pstree`, ta thấy có `cmd.exe` nằm trong `iex
 
 ![1](https://user-images.githubusercontent.com/91442807/216231456-20ac0ed6-6b5d-4eaa-8970-b40eb728f41a.png)
 
+## 5. What is the unique value the malware is using to maintain persistence after reboot?
+
+Một trong những nơi để setup `persistence access` là ở `registry key`:
+
+![image](https://user-images.githubusercontent.com/91442807/216280777-b1aaf0fc-6e8f-4034-9922-dd96b6195999.png)
+
+- Ta có thể thấy file `AnyConnectInstaller.exe` được drop ở thu mực trên để được persistence access
+
+## 6. Malware often uses a unique value or name to ensure that only one copy runs on the system. What is the unique name the malware is using?
+
+Dùng `mutex` để tránh tình trạng có 2 tiến trình giống nhau cùng chạy trên máy [tham khảo](https://www.sans.org/blog/looking-at-mutex-objects-for-malware-discovery-indicators-of-compromise/)
+
+Phân tích `iexplorer.exe` và liệt kê các `mutant process` trong đó:
+
+![1](https://user-images.githubusercontent.com/91442807/216287251-9e279574-75ec-4529-bfed-410fb93cb97d.png)
+
+## 7. It appears that a notorious hacker compromised this box before our current attackers. Name the movie he or she is from.
+
+
 
 
