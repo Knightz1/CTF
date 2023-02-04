@@ -125,10 +125,25 @@ TeamViewer.exe
 
 ![1](https://user-images.githubusercontent.com/91442807/216759592-269c0b74-9732-4bbd-8c0e-8b52d0f61ca9.png)
 
+## 21. What is the malware CNC's server?
 
+Coi lại của `iexplorer.exe` với `netscan` thôi
 
+## 22. What is the common name of the malware used to infect the POS system
 
+Dùng `malfind` để dump `code inject` ở `iexplorer.exe`:
 
+`vol.py -f POS-01-c4e8f786.vmss --profile=Win7SP1x86_23418 malfind -p 3208 -D .`
+
+Sau đó lấy hash rồi đem lên virustotal.
+
+## 23. In the POS malware whitelist. What application was specific to Allsafecybersec?
+
+Search string `allsafe` trong cái dump ở trên
+
+## 24. What is the name of the file the malware was initially launched from?
+
+Search `allsafe` với `filescan`
 
 
 
