@@ -107,6 +107,26 @@ Dùng `timeliner`:
 
 ![1](https://user-images.githubusercontent.com/91442807/216308214-61a853a4-d2aa-4f56-8b18-b5535e9d98d9.png)
 
+## 12. The attackers appear to have stored the output from the nbtscan.exe tool in a text file on a disk called nbs.txt. What is the IP address of the first machine in that file?
+
+Dump file `nbs.txt` 
+
+## 13. What is the full IP address and the port was the attacker's malware using?
+
+Dùng `netscan` để xem phần `iexplorer.exe`:
+
+![1](https://user-images.githubusercontent.com/91442807/216759530-6faf0f6d-315d-41c5-9249-2c376aff8dd2.png)
+
+## 14. It appears the attacker also installed legit remote administration software. What is the name of the running process?
+
+TeamViewer.exe
+
+## 15. It appears the attackers also used a built-in remote access method. What IP address did they connect to?
+
+![1](https://user-images.githubusercontent.com/91442807/216759592-269c0b74-9732-4bbd-8c0e-8b52d0f61ca9.png)
+
+
+
 
 
 
