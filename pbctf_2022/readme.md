@@ -37,7 +37,10 @@ At first `loc40` = `Arg0` which is `flag` , push `loc40` to stack and get length
 
 - len(flag)=58
 
-```
+<details>
+<summary>B2-B3</summary>
+	
+```python
 B2:
 	11: CopyLoc[41](loc40: &vector<u8>)
 	12: LdU64(0)
@@ -74,11 +77,16 @@ B3:
 	76: Add
 	77: Pop
 ```
+</details>
+	
 Basically, it checks `(loc40[0]<<48) | (loc40[1]<<40) | (loc40[2]<<32) | (loc40[3]<<24) | (loc40[4]<<16) | (loc40[5]<<8) | (loc40[len(log40)-1]<<0) ^ 29670774015617385 == 7049012482871828`
 
 - Check format flag: pbctf{......}
 
-```
+<details>
+<summary>B4-B8</summary>
+	
+```python
 B4:
 	78: LdConst[0](Vector(U64): [252, 1, 1, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0,..... ,0])
 	79: StLoc[5](loc4: vector<u64>)
@@ -132,6 +140,7 @@ B9:
 	121: Eq
 	122: BrFalse(142)
 ```
+</details>
 
 - B4: loc4= [252,....], loc38= &loc4, loc44=0, loc45=[]
 - B5: if loc44 < len(loc38)
