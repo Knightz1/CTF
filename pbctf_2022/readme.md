@@ -14,8 +14,9 @@ Also, i found some explanations for each instruction at [this](https://diem-deve
 
 ## 2. Understand bytecode instruction
 <details>
-<summary>B0-B1</summary>	
-```
+<summary>B0-B1</summary>
+	
+```python
 B0:
 	0: ImmBorrowLoc[0](Arg0: vector<u8>)
 	1: StLoc[41](loc40: &vector<u8>)
