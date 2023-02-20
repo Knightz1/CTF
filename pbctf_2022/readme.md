@@ -13,7 +13,7 @@ After built tool, i disassembled file and had its [bytecode](https://github.com/
 Also, i found some explanations for each instruction at [this](https://diem-developers-components.netlify.app/papers/diem-move-a-language-with-programmable-resources/2020-05-26.pdf)
 
 ## 2. Understand bytecode instruction
-
+<details>
 ```
 B0:
 	0: ImmBorrowLoc[0](Arg0: vector<u8>)
@@ -29,6 +29,7 @@ B1:
 	9: Add
 	10: Pop
 ```
+</details>
 
 At first `loc40` = `Arg0` which is `flag` , push `loc40` to stack and get length of `loc40`, compare it with 58, if equal jump to 11 else continue to B1
 
@@ -130,15 +131,15 @@ B9:
 	122: BrFalse(142)
 ```
 
-- B4: loc4= [252,....], loc38= &loc4, loc44=0 
+- B4: loc4= [252,....], loc38= &loc4, loc44=0, loc45=[]
 - B5: if loc44 < len(loc38)
 - B6: jump to 94
-- B7: loc42= loc38[loc44], loc43= (loc42 >>32)&255, loc41= loc42 &4294967295, if loc43==0 jump to 115 else jump 119
+- B7: loc42= loc38[loc44] vector 64 bit, loc43= (loc42 >>32)&255, loc41= loc42 &0xffffffff, if loc43==0 jump to 115 else jump 119
 - B8: push(loc41)
 
 Continnue analyzing, i found its a VM
 
-So, i wrote a disassembler
+So, i wrote a disassembler for it 
 
 
 
