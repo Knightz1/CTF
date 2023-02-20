@@ -14,6 +14,7 @@ Also, i found some explanations for each instruction at [this](https://diem-deve
 
 ## 2. Understand bytecode instruction
 <details>
+	
 ```
 B0:
 	0: ImmBorrowLoc[0](Arg0: vector<u8>)
