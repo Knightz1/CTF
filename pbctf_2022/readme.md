@@ -351,9 +351,101 @@ while id<len(data_arr):
 
 Read assembly, i found it check:
 
+<details>
+<summary>Check</summary>
 
+```python
+def enc(a1):  
+    tmp= a1>>1
+    tmp1= (a1&1)
+    tmp1^=4294967295
+    tmp1+=1
+    tmp1&=4294327160
+    tmp1^=tmp
+    return tmp1
+
+flag=list(b'pbctf{aaaa')
+
+r1=flag[6]
+for i in range(8):
+    r1=enc(r1)
+
+r2=r1^flag[7]
+for i in range(8):
+    r2=enc(r2)
+
+r3=r2^flag[8]
+for i in range(8):
+    r3=enc(r3)
+
+r4=r3^flag[9]
+for i in range(8):
+    r4=enc(r4)
+
+assert r4==2209421562
+```
+</details>
+
+I solved it with z3
+
+<details>
+<summary>Try with z3</summary>
+
+```python
+from z3 import *
+s=Solver()
+
+def enc(a1):  
+    tmp= a1>>1
+    tmp1= (a1&1)
+    tmp1^=4294967295
+    tmp1+=1
+    tmp1&=4294327160
+    tmp1^=tmp
+    return tmp1
+
+#flag=list(b'aaaa')
+flag=[BitVec(f'{i}',64) for i in range(4)]
+
+for c in flag:
+    s.add(c>0x20)
+    s.add(c<0x7f)
+
+r1=flag[0]
+for i in range(8):
+    r1=enc(r1)
+
+r2=r1^flag[1]
+for i in range(8):
+    r2=enc(r2)
+
+r3=r2^flag[2]
+for i in range(8):
+    r3=enc(r3)
+
+r4=r3^flag[3]
+for i in range(8):
+    r4=enc(r4)
+
+s.add(r4==2209421562)
+print(s.check())
+if s.check()==sat:
+    m=s.model()
+    for i in flag:
+        print(chr(m[i].as_long()),end="")
+```
+
+</details>
+
+- Got `enjo`
+
+I think i got it right, so i try to stop reading assembly and extract all values before `push(pop() == pop())` and put into that script
+
+`2209421562, 4020009855, 2511570847, 825727845, 2747945899, 2434240953, 3923412385, 1510700589, 3658116609, 1210550661, 2892531646, 648401340, 2537403886`
+
+- i dont know why some values z3 cant solve, eg: 4020009855, 825727845, 3923412385, 1510700589, 3658116609, bc it only 4 bytes so i bruted it :p
 	
-
+`flag: pbctf{enjoy haccing blockchains? work for Zellic:pepega:!}`
 
 
 
