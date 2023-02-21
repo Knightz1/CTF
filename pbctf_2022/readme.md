@@ -163,6 +163,7 @@ So, i wrote a disassembler for it:
 	
 ```python
 
+
 flag = b'a'*58
 
 data_arr = [1, 274877906974, 244813135872, 0, 244813135872, 206158430208, 1, 90194313216, 244813135872, 1, 81604378624, 4294967295, 73014444032, 1, 68719476736, 4294327160, 81604378624, 73014444032, 
@@ -239,100 +240,100 @@ while id<len(data_arr):
         id += 1
 
     elif op == 0x30:
-        v1 = stack.pop()
-        stack.append(v1)
-        stack.append(v1)
-        print(f'pop(v1), push(v1,v1)')
+        a1 = stack.pop()
+        stack.append(a1)
+        stack.append(a1)
+        print(f'pop(a1), push(a1,a1)')
         id += 1
 
     elif op == 0x31:
-        v1 = stack.pop()
-        v2 = stack.pop()
-        stack.append(v2)
-        stack.append(v1)
-        stack.append(v2)
-        print(f'pop(v1,v2), push(v2,v1,v2)')
+        a1 = stack.pop()
+        a2 = stack.pop()
+        stack.append(a2)
+        stack.append(a1)
+        stack.append(a2)
+        print(f'pop(a1,a2), push(a2,a1,a2)')
         id += 1
 
     elif op == 0x32:
-        v1 = stack.pop()
-        v2 = stack.pop()
-        v3 = stack.pop()
-        stack.append(v3)
-        stack.append(v2)
-        stack.append(v1)
-        stack.append(v3)
-        print(f'pop(v1,v2,v3), push(v3,v2,v1,v3)')
+        a1 = stack.pop()
+        a2 = stack.pop()
+        a3 = stack.pop()
+        stack.append(a3)
+        stack.append(a2)
+        stack.append(a1)
+        stack.append(a3)
+        print(f'pop(a1,a2,a3), push(a3,a2,a1,a3)')
         id += 1
 
     elif op == 0x33:
-        v1 = stack.pop()
-        v2 = stack.pop()
-        v3 = stack.pop()
-        v4 = stack.pop()
-        stack.append(v4)
-        stack.append(v3)
-        stack.append(v2)
-        stack.append(v1)
-        stack.append(v4)
-        print(f'pop(v1,v2,v3,v4), push(v4,v3,v2,v1,v4)')
+        a1 = stack.pop()
+        a2 = stack.pop()
+        a3 = stack.pop()
+        a4 = stack.pop()
+        stack.append(a4)
+        stack.append(a3)
+        stack.append(a2)
+        stack.append(a1)
+        stack.append(a4)
+        print(f'pop(a1,a2,a3,a4), push(a4,a3,a2,a1,a4)')
         id += 1
 
     elif op == 0x38:
-        v1 = stack.pop()
-        print(f'pop(v1)')
+        a1 = stack.pop()
+        print(f'pop(a1)')
         id += 1
 
     elif op == 0x39:
-        v1 = stack.pop()
-        v2 = stack.pop()
-        stack.append(v1)
-        stack.append(v2)
-        print(f'pop(v1,v2), push(v1,v2)')
+        a1 = stack.pop()
+        a2 = stack.pop()
+        stack.append(a1)
+        stack.append(a2)
+        print(f'pop(a1,a2), push(a1,a2)')
         id += 1
 
     elif op == 0x3A:
-        v1 = stack.pop()
-        v2 = stack.pop()
-        v3 = stack.pop()
-        stack.append(v2)
-        stack.append(v3)
-        stack.append(v1)
-        print(f'pop(v1,v2,v3), push(v2,v3,v1)')
+        a1 = stack.pop()
+        a2 = stack.pop()
+        a3 = stack.pop()
+        stack.append(a2)
+        stack.append(a3)
+        stack.append(a1)
+        print(f'pop(a1,a2,a3), push(a2,a3,a1)')
         id += 1
 
     elif op == 0x40:
-        v1 = stack.pop()
-        if v1 == 0:
+        a1 = stack.pop()
+        if a1 == 0:
             id += 1
         else:
             id = num
-        print(f'id={id}')
+        #print(f'id={id}')
 
     elif op == 0x41:
-        v1 = stack.pop()
-        if v1 == 0:
+        a1 = stack.pop()
+        if a1 == 0:
             id += 1
         else:
             id += num
-        print(f'id={id}')
+        #print(f'id={id}')
 
     elif op == 0x42:
-        v1 = stack.pop()
-        if v1 == 0:
+        a1 = stack.pop()
+        if a1 == 0:
             id += 1
         else:
             id -= num
-        print(f'id={id}')
+        #print(f'id={id}')
 
     elif op == 0x43:
-        v1 = stack.pop()
-        id = v1
+        a1 = stack.pop()
+        id = a1
 
     elif op == 0x44:
         stack.append(id + 1)
         id = num
-        print(f'id={id}')
+        #print(f'id={id}')
 
     elif op == 0x45:
         print("Do nothing")
@@ -342,9 +343,11 @@ while id<len(data_arr):
         id += 1
     else:
         print("unknown opcode")
-        break
+        id+=1
 ```
 </details>
+
+Full trace [here]()
 
 
 
