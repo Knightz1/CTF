@@ -142,17 +142,17 @@ B9:
 ```
 </details>
 
- B4: loc4= [252,....], loc38= &loc4, loc44=0, loc45=[]
+ B4: `loc4`= [252,....], `loc38`= &`loc4`, `loc44`=0, `loc45`=[]
 	
- B5: if loc44 < len(loc38)
+ B5: if `loc44` < len(`loc38`)
 			  
  B6: jump to 94
 			  
- B7: loc42= loc38[loc44] , loc43= (loc42 >>32)&255, loc41= loc42 &0xffffffff, if loc43==0 jump to 115 else jump 119
+ B7: `loc42`= `loc38`[`loc44`] , `loc43`= (`loc42` >>32)&255, `loc41`= `loc42` &0xffffffff, if `loc43`==0 jump to 115 else jump 119
 	
- B8: push(loc41)
+ B8: push(`loc41`)
 	
-- Beacause loc38 is a vector 64 bit, i change to 64 bit array, ignore first 2 bytes bc it is metadata of vector.
+- Beacause `loc38` is a vector 64 bit, i change to 64 bit array, ignore first 2 bytes bc it is metadata of vector.
 
 Continnue analyzing, i found its a VM
 
