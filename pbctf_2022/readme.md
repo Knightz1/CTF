@@ -33,7 +33,7 @@ B1:
 ```
 </details>
 
-At first `loc40` = `Arg0` which is `flag` , push `loc40` to stack and get length of `loc40`, compare it with 58, if equal jump to 11 else continue to B1
+- At first `loc40` = `Arg0` which is `flag` , push `loc40` to stack and get length of `loc40`, compare it with 58, if equal jump to 11 else continue to B1
 
 - len(flag)=58
 
@@ -79,7 +79,7 @@ B3:
 ```
 </details>
 	
-Basically, it checks `(loc40[0]<<48) | (loc40[1]<<40) | (loc40[2]<<32) | (loc40[3]<<24) | (loc40[4]<<16) | (loc40[5]<<8) | (loc40[len(log40)-1]<<0) ^ 29670774015617385 == 7049012482871828`
+- Basically, it checks `(loc40[0]<<48) | (loc40[1]<<40) | (loc40[2]<<32) | (loc40[3]<<24) | (loc40[4]<<16) | (loc40[5]<<8) | (loc40[len(log40)-1]<<0) ^ 29670774015617385 == 7049012482871828`
 
 - Check format flag: pbctf{......}
 
@@ -142,15 +142,15 @@ B9:
 ```
 </details>
 
- B4: `loc4`= [252,....], `loc38`= &`loc4`, `loc44`=0, `loc45`=[]
+ - B4: `loc4`= [252,....], `loc38`= &`loc4`, `loc44`=0, `loc45`=[]
 	
- B5: if `loc44` < len(`loc38`)
+ - B5: if `loc44` < len(`loc38`)
 			  
- B6: jump to 94
+ - B6: jump to 94
 			  
- B7: `loc42`= `loc38`[`loc44`] , `loc43`= (`loc42` >>32)&255, `loc41`= `loc42` &0xffffffff, if `loc43`==0 jump to 115 else jump 119
+ - B7: `loc42`= `loc38`[`loc44`] , `loc43`= (`loc42` >>32)&255, `loc41`= `loc42` &0xffffffff, if `loc43`==0 jump to 115 else jump 119
 	
- B8: push(`loc41`)
+ - B8: push(`loc41`)
 	
 - Beacause `loc38` is a vector 64 bit, i change to 64 bit array, ignore first 2 bytes bc it is metadata of vector.
 
