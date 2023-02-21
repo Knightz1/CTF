@@ -347,7 +347,11 @@ while id<len(data_arr):
 ```
 </details>
 
-- Full trace [here]()
+- Full trace [here](https://github.com/Knightz1/CTF/blob/main/pbctf_2022/trace.txt)
+
+Read assembly, i found it check:
+
+
 	
 
 
