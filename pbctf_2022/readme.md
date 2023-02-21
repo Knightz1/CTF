@@ -408,7 +408,7 @@ def enc(a1):
 flag=[BitVec(f'{i}',64) for i in range(4)]
 
 for c in flag:
-    s.add(c>0x20)
+    s.add(c>=0x20)
     s.add(c<0x7f)
 
 r1=flag[0]
@@ -444,8 +444,6 @@ I think i got it right, so i try to stop reading assembly and extract all values
 ```
 2209421562, 4020009855, 2511570847, 825727845, 2747945899, 2434240953, 3923412385, 1510700589, 3658116609, 1210550661, 2892531646, 648401340, 2537403886
 ````
-
-- i dont know why some values z3 cant solve, eg: 4020009855, 825727845, 3923412385, 1510700589, 3658116609, bc it only 4 bytes so i bruted it :p
 	
 `flag: pbctf{enjoy haccing blockchains? work for Zellic:pepega:!}`
 
