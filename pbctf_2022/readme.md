@@ -439,9 +439,11 @@ if s.check()==sat:
 
 - Got `enjo`
 
-I think i got it right, so i try to stop reading assembly and extract all values before `push(pop() == pop())` and put into that script
+I think i got it right, so i try to stop reading assembly and extract all values before `push(pop() == pop())` and put into that script:
 
-`2209421562, 4020009855, 2511570847, 825727845, 2747945899, 2434240953, 3923412385, 1510700589, 3658116609, 1210550661, 2892531646, 648401340, 2537403886`
+```
+2209421562, 4020009855, 2511570847, 825727845, 2747945899, 2434240953, 3923412385, 1510700589, 3658116609, 1210550661, 2892531646, 648401340, 2537403886
+````
 
 - i dont know why some values z3 cant solve, eg: 4020009855, 825727845, 3923412385, 1510700589, 3658116609, bc it only 4 bytes so i bruted it :p
 	
