@@ -349,6 +349,8 @@ while id<len(data_arr):
 
 - Full trace [here](https://github.com/Knightz1/CTF/blob/main/pbctf_2022/trace.txt)
 
+## 3. Solve
+
 Read assembly, i found it check:
 
 <details>
