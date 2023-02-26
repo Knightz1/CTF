@@ -1,6 +1,6 @@
 ### not-baby-parallelism
 
-## Trace.py
+#### Trace.py
 
 ```python
 import ida_dbg
@@ -41,7 +41,7 @@ while True:
         break
 ```
 
-## Solve.py
+#### Solve.py
 
 <details>
 
